@@ -2,21 +2,20 @@ package vue;
 
 import java.io.IOException;
 
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import controleur.CtrlVueMorse;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
-public class VueMorse extends Scene implements EventHandler<ActionEvent> {
+public class VueMorse extends Scene {
 	
 	private Stage primaryStage;
 	private VBox rootLayout;
+	private CtrlVueMorse controleur;
 	
 	public VueMorse(Stage stage) {
 
@@ -36,16 +35,14 @@ public class VueMorse extends Scene implements EventHandler<ActionEvent> {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(VueMorse.class.getResource("Vue1.fxml"));
 			this.rootLayout = (VBox) loader.load();
+			this.controleur = (CtrlVueMorse) loader.getController();
+			this.controleur.setVue(this);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
 		this.setRoot(this.rootLayout);
 		this.primaryStage.setScene(this);
-
-		Button bCreer = (Button) this.rootLayout.lookup("#vue1_bCreer");
-		bCreer.setOnAction(this);
-
 	}
 	/**
 	 * Placement de la fenétre
@@ -71,9 +68,5 @@ public class VueMorse extends Scene implements EventHandler<ActionEvent> {
 		this.primaryStage.setTitle("Portefeuille javaFX");
 		this.primaryStage.show();
 
-	}
-	@Override
-	public void handle(ActionEvent arg0) {
-		
 	}
 }
