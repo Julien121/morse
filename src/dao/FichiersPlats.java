@@ -13,7 +13,7 @@ import modele.metier.Morse;
 
 public class FichiersPlats {
 
-    private static final File f = new File("portefeuille.txt");
+    private static final File f = new File("CodeMorse.txt");
 
     public static Morse lecture() {
         Morse m = new Morse();
@@ -25,13 +25,11 @@ public class FichiersPlats {
                 String lettre = "";
                 String codeLettre = "";
                 while ((str = br.readLine()) != null) {
-                    if (str.length() == 1) {
-                        newStr = str.split("|");
-                        lettre = newStr[0].trim();
-                        codeLettre = newStr[1].trim();
-                        Code c = new Code(lettre, codeLettre);
-                        m.ajoutCode(c);
-                    }
+                    newStr = str.split("\\|");
+                    lettre = newStr[0].trim();
+                    codeLettre = newStr[1].trim();
+                    Code c = new Code(lettre, codeLettre);
+                    m.ajoutCode(c);
                 }
                 br.close();
             } catch (IOException ioe) {
