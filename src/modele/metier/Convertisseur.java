@@ -23,18 +23,27 @@ public class Convertisseur {
             System.out.println(str);
             return encode(str);
         } else {
+            System.out.println(str);
             return decode(str);
         }
     }
 
-    public String decode(String str) {
+    public String decode(String code) {
         String newStr = "";
-        for (int i = 0; i < str.length(); i++) {
-            for (int j = 1; j < lesCodes.size(); j++) {
-                if (Character.toString(str.charAt(i)) == lesCodes.get(j).getCodeLettre()) {
+        String[] tbCode = code.split(" ");
+        int j;
+        boolean trouve = false;
+        for (int i = 0; i < tbCode.length; i++) {
+            j = 0;
+            while (j < lesCodes.size() && trouve == false) {
+                if (tbCode[i].equals(lesCodes.get(j).getCodeLettre())) {
                     newStr += lesCodes.get(j).getLettre();
+                    trouve = true;
                 }
+                j++;
             }
+            newStr += " ";
+            trouve = false;
         }
         return newStr;
     }
@@ -46,7 +55,7 @@ public class Convertisseur {
         for (int i = 0; i < str.length(); i++) {
             j = 0;
             if (!Character.toString(str.charAt(i)).equals(" ")) {
-                while (j < lesCodes.size() || trouve == false) {
+                while (j < lesCodes.size() && trouve == false) {
                     if (str.charAt(i) == lesCodes.get(j).getLettre()) {
                         newStr += lesCodes.get(j).getCodeLettre() + " ";
                         trouve = true;
