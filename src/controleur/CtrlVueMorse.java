@@ -24,7 +24,7 @@ public class CtrlVueMorse{
 	}
 	public void handleActionConvert(ActionEvent event) {
 		tATexteConverti.setVisible(true);
-		String textConvertie = convertisseur.verifer(tATexte.getText());
+		String textConvertie = convertisseur.verifer(tATexte.getText().toLowerCase());
 		tATexteConverti.setText(textConvertie);
 	}
 
