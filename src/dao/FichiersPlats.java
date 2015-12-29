@@ -8,6 +8,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import modele.metier.Code;
+import modele.metier.Morse;
+
 public class FichiersPlats {
 
     private static final File f = new File("portefeuille.txt");

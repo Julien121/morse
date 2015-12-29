@@ -1,32 +1,40 @@
 package modele.metier;
 
 public class Code {
-	private String code;
-	private String lettre;
+	private String Lettre;
+	private String codeLettre;
 	
-	public Code(String code,String lettre)
+	public Code(String Lettre,String codeLettre)
 	{
-		this.code = code;
-		this.lettre = lettre;
+		this.Lettre = Lettre;
+		this.codeLettre = codeLettre;
 	}
 	
+	public String getLettre() {
+		return Lettre;
+	}
+
+	public String getCodeLettre() {
+		return codeLettre;
+	}
+
 	public String conversion(String uneLettre)
 	{
 		String lettreTraduit;
-		if(uneLettre == this.code)
+		if(uneLettre == this.Lettre)
 		{
-			lettreTraduit = this.lettre;
+			lettreTraduit = this.codeLettre;
 		}
 		else
 		{
-			lettreTraduit = this.code;
+			lettreTraduit = this.Lettre;
 		}
 		return lettreTraduit;
 	}
 	@Override
 	public boolean equals(Object o) {
 		String lettre = (String)o;
-		System.out.println(this.code.equalsIgnoreCase(lettre) || this.lettre.equalsIgnoreCase(lettre));
+		System.out.println(this.Lettre.equalsIgnoreCase(lettre) || this.codeLettre.equalsIgnoreCase(lettre));
 		return false;
 	}
 }

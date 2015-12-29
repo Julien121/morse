@@ -10,4 +10,8 @@ public class Morse {
 	{
 		codeMorse = new ArrayList<Code>();
 	}
+
+	public void ajoutCode(Code c) {
+		codeMorse.add(c);
+	}
 }
