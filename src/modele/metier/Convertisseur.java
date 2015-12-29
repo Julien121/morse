@@ -29,9 +29,17 @@ public class Convertisseur {
         }
         
         public void decode(String str){
+            String newStr = "";
+            for(int i = 0; i < str.length(); i++){
+                for(int j = 1; j <= lesCodes.size(); j++){
+                    if(str.charAt(i) == lesCodes.get(j).getCodeLettre()){
+                        newStr += lesCodes.get(j).getLettre();
+                    }
+                }
+            }
         }
         
-        public void encode(String str){
+        public String encode(String str){
             String newStr = "";
             for(int i = 0; i < str.length(); i++){
                 for(int j = 1; j <= lesCodes.size(); j++){
@@ -40,5 +48,6 @@ public class Convertisseur {
                     }
                 }
             }
+            return newStr;
         }
 }
