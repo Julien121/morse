@@ -9,14 +9,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import modele.metier.Code;
-import modele.metier.Morse;
+import modele.metier.Convertisseur;
 
 public class FichiersPlats {
 
     private static final File f = new File("CodeMorse.txt");
 
-    public static Morse lecture() {
-        Morse m = new Morse();
+    public static Convertisseur lecture() {
+        Convertisseur m = new Convertisseur();
         String[] newStr;
         if (f.exists()) {
             try {
