@@ -14,4 +14,5 @@ public class JavaFX extends Application {
 	public void start(Stage primaryStage){
 		new VueMorse(primaryStage);
 	}
+        
 }
