@@ -43,7 +43,7 @@ public class FichiersPlats {
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter(f));
             for (Code c : listeCode) {
-                bw.write(c.getLettre() + " : " + c.getCodeLettre());
+                bw.write(c.getLettre() + " | " + c.getCodeLettre());
                 bw.newLine();
             }
             bw.close();
