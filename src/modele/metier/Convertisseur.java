@@ -30,10 +30,10 @@ public class Convertisseur {
         public String decode(String str){
             String newStr = "";
             for(int i = 0; i < str.length(); i++){
-                for(int j = 1; j <= lesCodes.size(); j++){
-                    /*if(str.charAt(i) == lesCodes.get(j).getCodeLettre()){
+                for(int j = 1; j < lesCodes.size(); j++){
+                    if(Character.toString(str.charAt(i)) == lesCodes.get(j).getCodeLettre()){
                         newStr += lesCodes.get(j).getLettre();
-                    }*/
+                    }
                 }
             }
             return newStr;
@@ -41,14 +41,15 @@ public class Convertisseur {
         
         public String encode(String str){
             String newStr = "";
+            int j = 0;
             for(int i = 0; i < str.length(); i++){
-                for(int j = 1; j < lesCodes.size(); j++){
+                while (j < lesCodes.size()){
                     if(str.charAt(i) == lesCodes.get(j).getLettre()){
-                        newStr += lesCodes.get(j).getCodeLettre();
+                        newStr += lesCodes.get(j).getCodeLettre()+" ";
                     }
+                    j++;
                 }
-                newStr += " ";
             }
-            return newStr;
+            return newStr += "  ";
         }
 }
