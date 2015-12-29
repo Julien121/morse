@@ -18,35 +18,36 @@ public class Convertisseur {
 		lesCodes.add(c);
 	}
         
-        public void verifer(String str){
-            pattern = Pattern.compile("/w");
-            matcher = pattern.matcher(str);
-            if(matcher.find()){
-                encode(str);
+        public String verifer(String str){
+            if(str.matches("[\\w\\s]+")){
+            	System.out.println(str);
+                return encode(str);
             }else{
-                decode(str);
+                return decode(str);
             }
         }
         
-        public void decode(String str){
+        public String decode(String str){
             String newStr = "";
             for(int i = 0; i < str.length(); i++){
                 for(int j = 1; j <= lesCodes.size(); j++){
-                    if(str.charAt(i) == lesCodes.get(j).getCodeLettre()){
+                    /*if(str.charAt(i) == lesCodes.get(j).getCodeLettre()){
                         newStr += lesCodes.get(j).getLettre();
-                    }
+                    }*/
                 }
             }
+            return newStr;
         }
         
         public String encode(String str){
             String newStr = "";
             for(int i = 0; i < str.length(); i++){
-                for(int j = 1; j <= lesCodes.size(); j++){
+                for(int j = 1; j < lesCodes.size(); j++){
                     if(str.charAt(i) == lesCodes.get(j).getLettre()){
                         newStr += lesCodes.get(j).getCodeLettre();
                     }
                 }
+                newStr += " ";
             }
             return newStr;
         }
