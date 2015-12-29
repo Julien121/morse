@@ -1,5 +1,6 @@
 package principal;
 
+import controleur.CtrlVueMorse;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import vue.VueMorse;
@@ -11,8 +12,12 @@ public class JavaFX extends Application {
     }
 
 	@Override
-	public void start(Stage primaryStage){
-		new VueMorse(primaryStage);
+	public void start(Stage primaryStage)
+	{
+		VueMorse vue = new VueMorse(primaryStage);
+		
+		CtrlVueMorse controleur = vue.getControleur(); 
+		controleur.setModele(dao.FichiersPlats.lecture());
 	}
         
 }

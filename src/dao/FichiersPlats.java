@@ -9,24 +9,24 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import modele.metier.Code;
-import modele.metier.Morse;
+import modele.metier.Convertisseur;
 
 public class FichiersPlats {
 
     private static final File f = new File("CodeMorse.txt");
 
-    public static Morse lecture() {
-        Morse m = new Morse();
+    public static Convertisseur lecture() {
+    	Convertisseur m = new Convertisseur();
         String[] newStr;
         if (f.exists()) {
             try {
                 BufferedReader br = new BufferedReader(new FileReader(f));
                 String str;
-                String lettre;
+                char lettre;
                 String codeLettre = "";
                 while ((str = br.readLine()) != null) {
                     newStr = str.split("\\|");
-                    lettre = newStr[0].trim();
+                    lettre = newStr[0].trim().charAt(0);
                     codeLettre = newStr[1].trim();
                     Code c = new Code(lettre, codeLettre);
                     m.ajoutCode(c);
@@ -43,7 +43,7 @@ public class FichiersPlats {
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter(f));
             for (Code c : listeCode) {
-                bw.write(c.getLettre() + " : " + c.getCodeLettre());
+                bw.write(c.getLettre() + " | " + c.getCodeLettre());
                 bw.newLine();
             }
             bw.close();
