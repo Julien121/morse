@@ -45,14 +45,16 @@ public class Convertisseur {
         boolean trouve = false;
         for (int i = 0; i < str.length(); i++) {
             j = 0;
-            while (j < lesCodes.size() || trouve == false) {
-                if (str.charAt(i) == lesCodes.get(j).getLettre()) {
-                    newStr += lesCodes.get(j).getCodeLettre() + " ";
-                    trouve = true;
+            if (!Character.toString(str.charAt(i)).equals(" ")) {
+                while (j < lesCodes.size() || trouve == false) {
+                    if (str.charAt(i) == lesCodes.get(j).getLettre()) {
+                        newStr += lesCodes.get(j).getCodeLettre() + " ";
+                        trouve = true;
+                    }
+                    j++;
                 }
-                j++;
-            }
-            if (Character.toString(str.charAt(i)).equals(" ")) {
+                trouve = false;
+            } else {
                 newStr += "  ";
             }
         }
