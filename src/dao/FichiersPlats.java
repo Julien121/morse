@@ -22,7 +22,7 @@ public class FichiersPlats {
             try {
                 BufferedReader br = new BufferedReader(new FileReader(f));
                 String str;
-                String lettre = "";
+                String lettre;
                 String codeLettre = "";
                 while ((str = br.readLine()) != null) {
                     newStr = str.split("\\|");
