@@ -41,11 +41,13 @@ public class Convertisseur {
         
         public String encode(String str){
             String newStr = "";
-            int j = 0;
             for(int i = 0; i < str.length(); i++){
-                while (j < lesCodes.size()){
+                int j = 0;
+                boolean trouve = false;
+                while (j < lesCodes.size() || trouve == false){
                     if(str.charAt(i) == lesCodes.get(j).getLettre()){
                         newStr += lesCodes.get(j).getCodeLettre()+" ";
+                        trouve = true;
                     }
                     j++;
                 }
