@@ -45,7 +45,7 @@ public class VueMorse extends Scene {
 		this.primaryStage.setScene(this);
 	}
 	/**
-	 * Placement de la fenétre
+	 * Placement de la fenï¿½tre
 	 */
 	private void placeFenetre() {
 
