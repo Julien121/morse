@@ -1,16 +1,16 @@
 package modele.metier;
 
 public class Code {
-	private String lettre;
+	private char lettre;
 	private String codeLettre;
 	
-	public Code(String lettre,String codeLettre)
+	public Code(char lettre,String codeLettre)
 	{
 		this.lettre = lettre;
 		this.codeLettre = codeLettre;
 	}
 	
-	public String getLettre() {
+	public char getLettre() {
             return lettre;
 	}
 

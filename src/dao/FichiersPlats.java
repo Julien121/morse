@@ -22,11 +22,11 @@ public class FichiersPlats {
             try {
                 BufferedReader br = new BufferedReader(new FileReader(f));
                 String str;
-                String lettre;
+                char lettre;
                 String codeLettre = "";
                 while ((str = br.readLine()) != null) {
                     newStr = str.split("\\|");
-                    lettre = newStr[0].trim();
+                    lettre = newStr[0].trim().charAt(0);
                     codeLettre = newStr[1].trim();
                     Code c = new Code(lettre, codeLettre);
                     m.ajoutCode(c);
