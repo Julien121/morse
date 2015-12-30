@@ -12,71 +12,72 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 public class VueMorse extends Scene {
-	
-	private Stage primaryStage;
-	private VBox rootLayout;
-	private CtrlVueMorse controleur;
-	
-	public VueMorse(Stage stage) {
 
-		super(new Group(), 400, 600);
-		this.primaryStage = stage;
-		
-		this.chargeFenetre();
-		this.placeFenetre();
-	}
-	
-	/**
-	 * Chargement du fichier fxml
-	 */
-	private void chargeFenetre() {
-		try {
-			// Load root layout from fxml file.
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(VueMorse.class.getResource("Vue1.fxml"));
-			this.rootLayout = (VBox) loader.load();
-			this.controleur = (CtrlVueMorse) loader.getController();
-			this.controleur.setVue(this);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+    private Stage primaryStage;
+    private VBox rootLayout;
+    private CtrlVueMorse controleur;
 
-		this.setRoot(this.rootLayout);
-		this.primaryStage.setScene(this);
-	}
-	/**
-	 * Placement de la fen�tre
-	 */
-	private void placeFenetre() {
+    public VueMorse(Stage stage) {
 
-		int hauteurEcran;
-		int largeurEcran;
-		int origineX, origineY;
+        super(new Group(), 400, 600);
+        this.primaryStage = stage;
 
-		Rectangle2D dimEcran = Screen.getPrimary().getVisualBounds();
+        this.chargeFenetre();
+        this.placeFenetre();
+    }
 
-		hauteurEcran = (int) (dimEcran.getHeight());
-		largeurEcran = (int) (dimEcran.getWidth());
+    /**
+     * Chargement du fichier fxml
+     */
+    private void chargeFenetre() {
+        try {
+            // Load root layout from fxml file.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(VueMorse.class.getResource("Vue1.fxml"));
+            this.rootLayout = (VBox) loader.load();
+            this.controleur = (CtrlVueMorse) loader.getController();
+            this.controleur.setVue(this);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-		// Placement : à 10% du bord
-		origineX = largeurEcran / 10;
-		origineY = hauteurEcran / 10;
+        this.setRoot(this.rootLayout);
+        this.primaryStage.setScene(this);
+    }
 
-		this.primaryStage.setX(origineX);
-		this.primaryStage.setY(origineY);
+    /**
+     * Placement de la fen�tre
+     */
+    private void placeFenetre() {
 
-		this.primaryStage.setTitle("Morse");
-		this.primaryStage.show();
+        int hauteurEcran;
+        int largeurEcran;
+        int origineX, origineY;
 
-	}
-        
-        public VueCode creeVueSecondaire() {
+        Rectangle2D dimEcran = Screen.getPrimary().getVisualBounds();
 
-		return new VueCode(this.primaryStage);
-		
-	}
+        hauteurEcran = (int) (dimEcran.getHeight());
+        largeurEcran = (int) (dimEcran.getWidth());
 
-	public CtrlVueMorse getControleur() {
-		return this.controleur;
-	}
+        // Placement : à 10% du bord
+        origineX = largeurEcran / 10;
+        origineY = hauteurEcran / 10;
+
+        this.primaryStage.setX(origineX);
+        this.primaryStage.setY(origineY);
+
+        this.primaryStage.setTitle("Morse");
+        this.primaryStage.show();
+
+    }
+
+    public VueCode creeVueSecondaire() {
+
+        return new VueCode(this.primaryStage);
+
+    }
+
+    public CtrlVueMorse getControleur() {
+        return this.controleur;
+    }
 }

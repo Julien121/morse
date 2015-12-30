@@ -18,7 +18,23 @@ public class CtrlVueCode {
     }
 
     public void setVue(VueCode vueCode) {
-        this.vue = vue;
+        this.vue = vueCode;
+    }
+    
+    public void handleActionFermerFenetre(ActionEvent event) {
+        this.vue.close();
+    }
+    
+    public void handleActionAjouterCode(ActionEvent event) {
+        
+    }
+    
+    public void handleActionModifierCode(ActionEvent event) {
+        
+    }
+    
+    public void handleActionSupprimerCode(ActionEvent event) {
+        
     }
 
 }

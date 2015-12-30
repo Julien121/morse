@@ -12,15 +12,6 @@
          <VBox.margin>
             <Insets top="20.0" />
          </VBox.margin>
-         <bottom>
-            <Button fx:id="btnConvert" mnemonicParsing="false" onAction="#handleActionConvert" text="Convertir" BorderPane.alignment="CENTER">
-               <font>
-                  <Font size="18.0" />
-               </font>
-               <BorderPane.margin>
-                  <Insets />
-               </BorderPane.margin></Button>
-         </bottom>
          <top>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Convertisseur" BorderPane.alignment="CENTER">
                <font>
@@ -43,34 +34,27 @@
                </children>
             </FlowPane>
          </center>
-      </BorderPane>
-      <BorderPane fx:id="bPAffichageConversion" prefHeight="226.0" prefWidth="400.0" visible="false">
-         <center>
-            <FlowPane alignment="CENTER" columnHalignment="CENTER" prefHeight="208.0" prefWidth="400.0" BorderPane.alignment="CENTER">
-               <children>
-                  <TextArea fx:id="tATexteConverti" editable="false" prefHeight="100.0" prefWidth="350.0">
+         <bottom>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <top>
+                  <Button fx:id="btnConvert" mnemonicParsing="false" onAction="#handleActionConvert" text="Convertir" BorderPane.alignment="CENTER">
                      <font>
-                        <Font size="14.0" />
+                        <Font size="18.0" />
                      </font>
-                     <FlowPane.margin>
-                        <Insets top="-20.0" />
-                     </FlowPane.margin>
-                  </TextArea>
-               </children>
-               <BorderPane.margin>
-                  <Insets top="50.0" />
-               </BorderPane.margin>
-            </FlowPane>
-         </center>
-         <top>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Le résultat de la conversion:" BorderPane.alignment="CENTER">
-               <font>
-                  <Font size="18.0" />
-               </font>
-               <BorderPane.margin>
-                  <Insets top="20.0" />
-               </BorderPane.margin>
-            </Text>
-         </top></BorderPane>
+                     <BorderPane.margin>
+                        <Insets top="15.0" />
+                     </BorderPane.margin>
+                  </Button>
+               </top>
+               <bottom>
+                  <Button fx:id="btnAffVueCode" mnemonicParsing="false" onAction="#handleActionAffVueCode" text="Aller au parametre de conversion" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </bottom>
+            </BorderPane>
+         </bottom>
+      </BorderPane>
    </children>
 </VBox>
