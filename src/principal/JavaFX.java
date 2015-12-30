@@ -15,7 +15,6 @@ public class JavaFX extends Application {
 	public void start(Stage primaryStage)
 	{
 		VueMorse vue = new VueMorse(primaryStage);
-		
 		CtrlVueMorse controleur = vue.getControleur(); 
 		controleur.setModele(dao.FichiersPlats.lecture());
 	}
