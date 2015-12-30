@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleur.CtrlVueCode">
+   <children>
+      <BorderPane fx:id="vue1PanelDevises" prefHeight="300.0" prefWidth="200.0">
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin>
+         <top>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Liste de conversion" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <BorderPane.margin>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </BorderPane.margin></Text>
+         </top>
+         <center>
+            <FlowPane alignment="CENTER" columnHalignment="CENTER" prefHeight="210.0" prefWidth="360.0" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets left="20.0" right="20.0" />
+               </BorderPane.margin>
+               <children>
+                  <ListView prefHeight="150.0" prefWidth="350.0" />
+               </children>
+            </FlowPane>
+         </center>
+         <bottom>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <center>
+                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="200.0" prefWidth="350.0" spacing="10.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Button fx:id="btnAjouterCode" mnemonicParsing="false" text="Ajouter">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="btnModifierCode" mnemonicParsing="false" text="Modifier">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnSupprimerCode" mnemonicParsing="false" text="Supprimer">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <BorderPane.margin>
+                        <Insets />
+                     </BorderPane.margin>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                  </HBox>
+               </center>
+               <bottom>
+                  <Button fx:id="btnFermerListeCode" mnemonicParsing="false" text="Fermer" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </bottom>
+            </BorderPane>
+         </bottom>
+      </BorderPane>
+   </children>
+</VBox>

@@ -43,5 +43,9 @@ public class CtrlVueMorse {
             MonJavaFX.erreur("Erreur", iae.getMessage());
         }
     }
+    
+    public void handleActionAffVueCode (ActionEvent event){
+        VueCode c = this.vue.
+    }
 
 }
