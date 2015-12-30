@@ -35,9 +35,11 @@ public class Code {
 			int i = 0;
 			boolean valide = true;
 			while(i < codeLettre.length() && valide == true){
-				if(codeLettre.charAt(i) != ' ' || codeLettre.charAt(i) != '-' || codeLettre.charAt(i) != '.'){
+				if(codeLettre.charAt(i) != ' ' && codeLettre.charAt(i) != '-' && codeLettre.charAt(i) != '.'){
+					System.out.println(codeLettre.charAt(i));
 					valide = false;
 				}
+				i++;
 			}
 			if(valide)
 			{

@@ -34,7 +34,11 @@ public class FichiersPlats {
                 br.close();
             } catch (IOException ioe) {
                 ioe.printStackTrace();
+            } catch(IllegalArgumentException iae)
+            {
+            	iae.printStackTrace();
             }
+            
         }
         return m;
     }
