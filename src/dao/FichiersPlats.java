@@ -14,7 +14,7 @@ import modele.metier.Convertisseur;
 public class FichiersPlats {
 
     private static final File f = new File("CodeMorse.txt");
-
+ 
     public static Convertisseur lecture() {
     	Convertisseur m = new Convertisseur();
         String[] newStr;
