@@ -30,20 +30,24 @@ public class Convertisseur {
 
     public String decode(String code) {
         String newStr = "";
-        String[] tbCode = code.split(" ");
+        String[] tbCode = code.split("\\s");
         int j;
         boolean trouve = false;
         for (int i = 0; i < tbCode.length; i++) {
             j = 0;
-            while (j < lesCodes.size() && trouve == false) {
-                if (tbCode[i].equals(lesCodes.get(j).getCodeLettre())) {
-                    newStr += lesCodes.get(j).getLettre();
-                    trouve = true;
+            if (!tbCode[i].isEmpty() || !tbCode[i+1].isEmpty()) {
+                while (j < lesCodes.size() && trouve == false) {
+                    if (tbCode[i].equals(lesCodes.get(j).getCodeLettre())) {
+                        newStr += lesCodes.get(j).getLettre();
+                        trouve = true;
+                    }
+                    j++;
                 }
-                j++;
+                trouve = false;
+            } else {
+                newStr += " ";
             }
-            newStr += " ";
-            trouve = false;
+            System.out.println("|"+tbCode[i]+"|");
         }
         return newStr;
     }
