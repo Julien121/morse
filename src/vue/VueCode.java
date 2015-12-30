@@ -1,14 +1,16 @@
 package vue;
 
-import controleur.CtrlVueCode;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+
+import controleur.CtrlVueCode;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.ListView;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -19,19 +21,19 @@ public class VueCode extends Stage {
 
     private CtrlVueCode controleur;
 
-    private VBox rootLayout;
+    private VBox root;
 
     public VueCode(Stage parent) {
 
         try {
             URL fxmlURL = VueMorse.class.getResource("Vue2.fxml");
-            FXMLLoader loader = new FXMLLoader(fxmlURL);
-            this.rootLayout = (VBox) loader.load();
+			FXMLLoader fxmlLoader = new FXMLLoader(fxmlURL);
+			this.root = (VBox) fxmlLoader.load();
 
-            this.controleur = (CtrlVueCode) loader.getController();
-            this.controleur.setVue(this);
+			this.controleur = fxmlLoader.getController();
+			this.controleur.setVue(this);
 
-            Scene scene = new Scene(this.rootLayout);
+            Scene scene = new Scene(this.root);
             this.initOwner(parent);
             this.initModality(Modality.APPLICATION_MODAL);
             this.setX(parent.getX() + 80);
@@ -40,7 +42,6 @@ public class VueCode extends Stage {
             this.setTitle("Listes de conversion");
         } catch (IOException ex) {
             MonJavaFX.erreur("Problème FXML", "Erreur lors du chargement de la vue \n" + ex.getMessage());
-            System.out.println(ex.getMessage());
         }
 
     }
@@ -48,13 +49,22 @@ public class VueCode extends Stage {
     public CtrlVueCode getControleur() {
         return this.controleur;
     }
-
+    public ListView<String> getListView() 
+    {
+    	return (ListView<String>) this.root.lookup("#vue2_ListeConversion");
+    }
     public void afficherListeConversion(ArrayList<Code> lesCodes) {
-        ListView liste = (ListView) this.rootLayout.lookup("#vue2_listeConversion");
-        ObservableList<String> items = FXCollections.observableArrayList();
+    	FlowPane fP = (FlowPane) this.root.lookup("#FPListView");
+    	fP.getChildren().clear();
+	   	ObservableList<String> items = FXCollections.observableArrayList();
+	    ListView<String> liste = new ListView<String>();
         for (Code c : lesCodes) {
-            items.add(Character.toString(c.getLettre()));
+            items.add(Character.toString(c.getLettre())+" : "+c.getCodeLettre());
         }
         liste.setItems(items);
+        liste.setPrefWidth(350.0);
+        liste.setPrefHeight(150.0);
+        liste.setId("vue2_ListeConversion");
+        fP.getChildren().add(liste);
     }
 }

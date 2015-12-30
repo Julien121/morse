@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleur.CtrlVueCode">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleur.CtrlVueCode">
    <children>
       <BorderPane fx:id="vue1PanelDevises" prefHeight="300.0" prefWidth="200.0">
          <VBox.margin>
@@ -22,13 +22,10 @@
                </BorderPane.margin></Text>
          </top>
          <center>
-            <FlowPane alignment="CENTER" columnHalignment="CENTER" prefHeight="210.0" prefWidth="360.0" BorderPane.alignment="CENTER">
+            <FlowPane fx:id="FPListView" alignment="CENTER" columnHalignment="CENTER" prefHeight="210.0" prefWidth="360.0" BorderPane.alignment="CENTER">
                <BorderPane.margin>
                   <Insets left="20.0" right="20.0" />
                </BorderPane.margin>
-               <children>
-                  <ListView prefHeight="150.0" prefWidth="350.0" />
-               </children>
             </FlowPane>
          </center>
          <bottom>
@@ -36,7 +33,7 @@
                <center>
                   <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="200.0" prefWidth="350.0" spacing="10.0" BorderPane.alignment="CENTER">
                      <children>
-                        <Button fx:id="btnAjouterCode" mnemonicParsing="false" onAction="#handleActionAjouterCode" text="Ajouter">
+                        <Button fx:id="vue2_btnAjouterCode" mnemonicParsing="false" onAction="#handleActionAjouterCode" text="Ajouter">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -44,12 +41,12 @@
                               <Insets />
                            </HBox.margin>
                         </Button>
-                        <Button fx:id="btnModifierCode" mnemonicParsing="false" onAction="#handleActionModifierCode" text="Modifier">
+                        <Button fx:id="vue2_btnModifierCode" mnemonicParsing="false" onAction="#handleActionModifierCode" text="Modifier">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Button>
-                        <Button fx:id="btnSupprimerCode" mnemonicParsing="false" onAction="#handleActionSupprimerCode" text="Supprimer">
+                        <Button fx:id="vue2_btnSupprimerCode" mnemonicParsing="false" onAction="#handleActionSupprimerCode" text="Supprimer">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -64,7 +61,7 @@
                   </HBox>
                </center>
                <bottom>
-                  <Button fx:id="btnFermerListeCode" mnemonicParsing="false" onAction="#handleActionFermerFenetre" text="Fermer" BorderPane.alignment="CENTER">
+                  <Button fx:id="vue2_btnFermerListeCode" mnemonicParsing="false" onAction="#handleActionFermerFenetre" text="Fermer" BorderPane.alignment="CENTER">
                      <font>
                         <Font size="18.0" />
                      </font>

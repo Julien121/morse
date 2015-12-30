@@ -55,5 +55,17 @@ public class Code {
 			throw new IllegalArgumentException("Le code ne peut pas �tre vide");
 		}
 	}
+	public boolean equals(Object d) {
+		
+		if (d instanceof Code) {
+			Code code = ((Code)d);
+			if(Character.toString(code.lettre).equalsIgnoreCase(Character.toString(this.lettre)) && code.codeLettre.equalsIgnoreCase(this.codeLettre))
+			{
+				return true;
+			}
+		}
+		
+		return false;
+	}
 	
 }

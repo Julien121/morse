@@ -44,7 +44,7 @@ public class CtrlVueMorse {
 
     public void handleActionAffVueCode(ActionEvent event) {
         VueCode c = this.vue.creeVueSecondaire();
-        c.getControleur();
+        c.getControleur().setModele(this.convertisseur);;
         c.showAndWait();
     }
 
