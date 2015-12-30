@@ -47,6 +47,11 @@ public class Convertisseur {
             }
             System.out.println("|"+tbCode[i]+"|");
         }
+        if(newStr.isEmpty())
+        {
+        	newStr = code;
+        	throw new IllegalArgumentException("Le texte n'a pas pu etre converti");
+        }
         return newStr;
     }
 
@@ -68,6 +73,11 @@ public class Convertisseur {
             } else {
                 newStr += "  ";
             }
+        }
+        if(newStr.isEmpty())
+        {
+        	newStr = str;
+        	throw new IllegalArgumentException("Le texte n'a pas pu etre converti");
         }
         return newStr;
     }
