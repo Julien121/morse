@@ -32,7 +32,21 @@ public class Code {
 	public void setCodeLettre(String codeLettre) {
 		if(!codeLettre.isEmpty())
 		{
-			this.codeLettre = codeLettre;
+			int i = 0;
+			boolean valide = true;
+			while(i < codeLettre.length() && valide == true){
+				if(codeLettre.charAt(i) != ' ' || codeLettre.charAt(i) != '-' || codeLettre.charAt(i) != '.'){
+					valide = false;
+				}
+			}
+			if(valide)
+			{
+				this.codeLettre = codeLettre;
+			}
+			else
+			{
+				throw new IllegalArgumentException("Le code peut seulement contenir un espace un point ou un tiret");
+			}
 		}
 		else
 		{
