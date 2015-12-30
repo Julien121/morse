@@ -3,10 +3,10 @@ package controleur;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
-import javafx.scene.layout.BorderPane;
 import vue.VueMorse;
 import modele.metier.Convertisseur;
 import perso.utils.MonJavaFX;
+import vue.VueCode;
 
 public class CtrlVueMorse {
 
@@ -15,13 +15,11 @@ public class CtrlVueMorse {
 
     //@FXML
     //private BorderPane bPAffichageConversion;
-
     @FXML
     private TextArea tATexteSaisie;
 
     //@FXML
     //private TextArea tATexteConverti;
-
     public void setModele(Convertisseur convertisseur) {
         this.convertisseur = convertisseur;
     }
@@ -39,13 +37,15 @@ public class CtrlVueMorse {
                 String textConvertie = convertisseur.verifer(tATexteSaisie.getText().toLowerCase());
                 tATexteSaisie.setText(textConvertie);
             }
-        }catch (IllegalArgumentException iae){
+        } catch (IllegalArgumentException iae) {
             MonJavaFX.erreur("Erreur", iae.getMessage());
         }
     }
-    
-    public void handleActionAffVueCode (ActionEvent event){
-        VueCode c = this.vue.
+
+    public void handleActionAffVueCode(ActionEvent event) {
+        VueCode c = this.vue.creeVueSecondaire();
+        c.getControleur();
+        c.showAndWait();
     }
 
 }

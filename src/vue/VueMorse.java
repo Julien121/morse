@@ -69,6 +69,12 @@ public class VueMorse extends Scene {
 		this.primaryStage.show();
 
 	}
+        
+        public VueCode creeVueSecondaire() {
+
+		return new VueCode(this.primaryStage);
+		
+	}
 
 	public CtrlVueMorse getControleur() {
 		return this.controleur;
