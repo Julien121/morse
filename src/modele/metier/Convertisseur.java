@@ -7,6 +7,8 @@ import java.util.regex.*;
 public class Convertisseur {
 
     private ArrayList<Code> lesCodes;
+    private static Pattern pattern;
+    private static Matcher matcher;
 
     public Convertisseur() {
         lesCodes = new ArrayList<Code>();

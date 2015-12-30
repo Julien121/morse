@@ -65,7 +65,7 @@ public class VueMorse extends Scene {
 		this.primaryStage.setX(origineX);
 		this.primaryStage.setY(origineY);
 
-		this.primaryStage.setTitle("Morse");
+		this.primaryStage.setTitle("Portefeuille javaFX");
 		this.primaryStage.show();
 
 	}
