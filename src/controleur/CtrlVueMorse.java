@@ -25,7 +25,7 @@ public class CtrlVueMorse {
     }
 
     public void setVue(VueMorse vueMorse) {
-        this.vue = vue;
+        this.vue = vueMorse;
     }
 
     public void handleActionConvert(ActionEvent event) {

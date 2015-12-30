@@ -20,7 +20,7 @@ public class VueCode extends Stage {
 
         try {
             URL fxmlURL = VueMorse.class.getResource("Vue2.fxml");
-            FXMLLoader loader = new FXMLLoader();
+            FXMLLoader loader = new FXMLLoader(fxmlURL);
             this.rootLayout = (VBox) loader.load();
 
             this.controleur = (CtrlVueCode) loader.getController();
