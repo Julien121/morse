@@ -3,11 +3,16 @@ package vue;
 import controleur.CtrlVueCode;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.ListView;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import modele.metier.Code;
 import perso.utils.MonJavaFX;
 
 public class VueCode extends Stage {
@@ -42,5 +47,14 @@ public class VueCode extends Stage {
 
     public CtrlVueCode getControleur() {
         return this.controleur;
+    }
+
+    public void afficherListeConversion(ArrayList<Code> lesCodes) {
+        ListView liste = (ListView) this.rootLayout.lookup("#vue2_listeConversion");
+        ObservableList<String> items = FXCollections.observableArrayList();
+        for (Code c : lesCodes) {
+            items.add(Character.toString(c.getLettre()));
+        }
+        liste.setItems(items);
     }
 }

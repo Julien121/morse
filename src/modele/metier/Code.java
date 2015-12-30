@@ -25,7 +25,7 @@ public class Code {
 		}
 		else
 		{
-			throw new IllegalArgumentException("La lettre ne peut pas être vide");
+			throw new IllegalArgumentException("La lettre ne peut pas Ãªtre vide");
 		}
 	}
 
@@ -52,7 +52,7 @@ public class Code {
 		}
 		else
 		{
-			throw new IllegalArgumentException("Le code ne peut pas être vide");
+			throw new IllegalArgumentException("Le code ne peut pas ï¿½tre vide");
 		}
 	}
 	

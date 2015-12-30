@@ -15,6 +15,7 @@ public class CtrlVueCode {
 
     public void setModele(Convertisseur convertisseur) {
         this.convertisseur = convertisseur;
+        this.vue.afficherListeConversion(this.convertisseur.getLesCodes());
     }
 
     public void setVue(VueCode vueCode) {
