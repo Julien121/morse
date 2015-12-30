@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleur.CtrlVueMorse">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleur.CtrlVueMorse">
    <children>
       <BorderPane fx:id="vue1PanelDevises" prefHeight="300.0" prefWidth="200.0">
          <VBox.margin>
@@ -36,7 +36,7 @@
                   <Insets left="20.0" right="20.0" />
                </BorderPane.margin>
                <children>
-                  <TextArea fx:id="tATexteSaisie" prefHeight="100.0" prefWidth="350.0" promptText="Saisir une phrase ou un code morse">
+                  <TextArea fx:id="tATexte" prefHeight="100.0" prefWidth="350.0" promptText="Saisir une phrase ou un code morse">
                      <font>
                         <Font size="14.0" />
                      </font></TextArea>
@@ -44,11 +44,11 @@
             </FlowPane>
          </center>
       </BorderPane>
-      <BorderPane fx:id="bPAffichageConversion" prefHeight="226.0" prefWidth="400.0" visible="false">
+      <BorderPane prefHeight="226.0" prefWidth="400.0">
          <center>
             <FlowPane alignment="CENTER" columnHalignment="CENTER" prefHeight="208.0" prefWidth="400.0" BorderPane.alignment="CENTER">
                <children>
-                  <TextArea fx:id="tATexteConverti" editable="false" prefHeight="100.0" prefWidth="350.0">
+                  <TextArea fx:id="tATexteConverti" editable="false" prefHeight="100.0" prefWidth="350.0" visible="false">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -63,7 +63,7 @@
             </FlowPane>
          </center>
          <top>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Le résultat de la conversion:" BorderPane.alignment="CENTER">
+            <Text fx:id="tEstConverti" strokeType="OUTSIDE" strokeWidth="0.0" text="Le résultat de la conversion:" visible="false" BorderPane.alignment="CENTER">
                <font>
                   <Font size="18.0" />
                </font>
