@@ -11,11 +11,11 @@ public class Convertisseur {
     public Convertisseur() {
         lesCodes = new ArrayList<Code>();
     }
-
-    public void ajoutCode(Code c) {
-        lesCodes.add(c);
-    }
-
+    
+    public ArrayList<Code> getLesCodes() {
+		return lesCodes;
+	}
+    
     public String verifer(String str) {
         if (str.matches("[\\w\\s]+")) {
             System.out.println(str);
@@ -70,5 +70,44 @@ public class Convertisseur {
             }
         }
         return newStr;
+    }
+    
+    public void ajouter(Code c)
+    {
+    	int i = 0;
+    	boolean trouve = false;
+    	while(i < lesCodes.size() && trouve == false)
+    	{
+    		if(lesCodes.get(i).getCodeLettre() == c.getCodeLettre() || lesCodes.get(i).getLettre() == c.getLettre())
+			{
+				trouve = true;
+			}
+			i++;
+    	}
+    	if(trouve)
+    	{
+    		if(lesCodes.get(i-1).getCodeLettre() == c.getCodeLettre())
+    		{
+    			lesCodes.get(i-1).setLettre(c.getLettre());
+    		}else{
+    			lesCodes.get(i-1).setCodeLettre(c.getCodeLettre());
+    		}
+    	}
+    	else
+    	{
+    		lesCodes.add(c);
+    	}
+    }
+
+	public void supprimer(Code c)
+    {
+    	if(lesCodes.contains(c))
+    	{
+    		lesCodes.remove(c);
+    	}
+    	else
+    	{
+    		 throw new IllegalArgumentException("Impossible de supprimer");
+    	}
     }
 }

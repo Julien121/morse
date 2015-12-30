@@ -29,7 +29,7 @@ public class FichiersPlats {
                     lettre = newStr[0].trim().charAt(0);
                     codeLettre = newStr[1].trim();
                     Code c = new Code(lettre, codeLettre);
-                    m.ajoutCode(c);
+                    m.ajouter(c);
                 }
                 br.close();
             } catch (IOException ioe) {
