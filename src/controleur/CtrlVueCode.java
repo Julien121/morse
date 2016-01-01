@@ -33,25 +33,25 @@ public class CtrlVueCode {
     public void handleActionAjouterCode(ActionEvent event) {
         this.vue.afficherAction(true);
         this.vue2_labAction.setText("Ajouter conversion");
+        this.vue.selectionner("");
     }
 
     public void handleActionModifierCode(ActionEvent event) {
         this.vue.afficherAction(true);
         this.vue2_labAction.setText("Modifier conversion");
         String select = this.vue.listeSelection();
-        String nouvelleSaisie;
         if (select != null) {
-            nouvelleSaisie = this.vue.selectionner(select);
-            System.out.println("Selectionner:" + select);
+            this.vue.selectionner(select);
         }
     }
 
     public void handleActionSupprimerCode(ActionEvent event) {
         try {
-            String select = this.vue.selectionner();
+            String select = this.vue.listeSelection();
             if (select != null) {
                 this.convertisseur.supprimer(new Code(select.split(":")[0].trim().charAt(0), select.split(":")[1].trim()));
                 this.vue.afficherListeConversion(this.convertisseur.getLesCodes());
+                MonJavaFX.info("Succès", "Action réalisée.");
             } else {
                 throw new IllegalArgumentException("Veuillez sélectionner un code avant de supprimer !");
             }
@@ -67,6 +67,7 @@ public class CtrlVueCode {
                 this.convertisseur.ajouter(new Code(nouvelleSaisie.split(":")[0].trim().charAt(0), nouvelleSaisie.split(":")[1].trim()));
                 this.vue.afficherListeConversion(this.convertisseur.getLesCodes());
                 this.vue.afficherAction(false);
+                MonJavaFX.info("Succès", "Action réalisée.");
             } else {
                 this.vue.afficherAction(true);
                 throw new IllegalArgumentException("Impossible d'effectuer cette action");

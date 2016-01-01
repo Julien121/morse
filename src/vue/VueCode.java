@@ -108,6 +108,7 @@ public class VueCode extends Stage {
     
     public void selectionner(String select){
         TextField tSaisieConversion = (TextField) this.root.lookup("#vue2_tfSaisieModifConversion");
+        tSaisieConversion.setPromptText("Format (a:.-)");
         tSaisieConversion.setText(select);
     }
 }
