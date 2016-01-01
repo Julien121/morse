@@ -70,7 +70,7 @@
                         </Button>
                      </bottom>
                      <right>
-                        <Button fx:id="vue2_btnValider" mnemonicParsing="false" onAction="#handleActionValider" text="Validez" BorderPane.alignment="CENTER">
+                        <Button fx:id="vue2_btnValider" mnemonicParsing="false" onAction="#handleActionValider" text="Validez" visible="false" BorderPane.alignment="CENTER">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -80,7 +80,7 @@
                         </Button>
                      </right>
                      <center>
-                        <TextField fx:id="vue2_tfSaisieModifConversion" alignment="CENTER" BorderPane.alignment="CENTER">
+                        <TextField fx:id="vue2_tfSaisieModifConversion" alignment="CENTER" visible="false" BorderPane.alignment="CENTER">
                            <BorderPane.margin>
                               <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                            </BorderPane.margin>
@@ -89,6 +89,13 @@
                            </font>
                         </TextField>
                      </center>
+                     <top>
+                        <Label fx:id="vue2_labAction" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </top>
                   </BorderPane>
                </bottom>
             </BorderPane>

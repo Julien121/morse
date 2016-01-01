@@ -1,9 +1,8 @@
 package controleur;
 
-import java.util.Optional;
 import javafx.event.ActionEvent;
-import javafx.scene.control.TextInputDialog;
-import javafx.scene.input.MouseEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import modele.metier.Code;
 import modele.metier.Convertisseur;
 import perso.utils.MonJavaFX;
@@ -14,6 +13,9 @@ public class CtrlVueCode {
     private VueCode vue;
     private Convertisseur convertisseur;
 
+     @FXML
+    private Label vue2_labAction;
+     
     public void setModele(Convertisseur convertisseur) {
         this.convertisseur = convertisseur;
         this.vue.afficherAction(false);
@@ -30,11 +32,12 @@ public class CtrlVueCode {
 
     public void handleActionAjouterCode(ActionEvent event) {
         this.vue.afficherAction(true);
+        this.vue2_labAction.setText("Ajouter conversion");
     }
 
     public void handleActionModifierCode(ActionEvent event) {
         this.vue.afficherAction(true);
-        String select = this.vue.selectionner();
+        this.vue2_labAction.setText("Modifier conversion");
     }
 
     public void handleActionSupprimerCode(ActionEvent event) {
@@ -58,8 +61,6 @@ public class CtrlVueCode {
             if (select != null) {
                 nouvelleSaisie = select;
                 System.out.println("Selectionner:" + select);
-            } else {
-                nouvelleSaisie = "";
             }
             if (!nouvelleSaisie.isEmpty()) {
                 this.convertisseur.ajouter(new Code(nouvelleSaisie.split(":")[0].trim().charAt(0), nouvelleSaisie.split(":")[1].trim()));
