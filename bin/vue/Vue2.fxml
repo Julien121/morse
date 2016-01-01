@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleur.CtrlVueCode">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleur.CtrlVueCode">
    <children>
       <BorderPane fx:id="vue1PanelDevises" prefHeight="300.0" prefWidth="200.0">
          <VBox.margin>
@@ -61,11 +61,42 @@
                   </HBox>
                </center>
                <bottom>
-                  <Button fx:id="vue2_btnFermerListeCode" mnemonicParsing="false" onAction="#handleActionFermerFenetre" text="Fermer" BorderPane.alignment="CENTER">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Button>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <bottom>
+                        <Button fx:id="vue2_btnFermerListeCode" mnemonicParsing="false" onAction="#handleActionFermerFenetre" text="Fermer" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                     </bottom>
+                     <right>
+                        <Button fx:id="vue2_btnValider" mnemonicParsing="false" onAction="#handleActionValider" text="Validez" visible="false" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <BorderPane.margin>
+                              <Insets right="20.0" />
+                           </BorderPane.margin>
+                        </Button>
+                     </right>
+                     <center>
+                        <TextField fx:id="vue2_tfSaisieModifConversion" alignment="CENTER" visible="false" BorderPane.alignment="CENTER">
+                           <BorderPane.margin>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </BorderPane.margin>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                     </center>
+                     <top>
+                        <Label fx:id="vue2_labAction" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </top>
+                  </BorderPane>
                </bottom>
             </BorderPane>
          </bottom>

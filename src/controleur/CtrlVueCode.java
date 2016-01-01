@@ -51,9 +51,10 @@ public class CtrlVueCode {
             if (select != null) {
                 this.convertisseur.supprimer(new Code(select.split(":")[0].trim().charAt(0), select.split(":")[1].trim()));
                 this.vue.afficherListeConversion(this.convertisseur.getLesCodes());
-                MonJavaFX.info("SuccÃ¨s", "Action rÃ©alisÃ©e.");
+                MonJavaFX.info("Succès", "Action réalisée.");
+                dao.FichiersPlats.sauve(this.convertisseur.getLesCodes());
             } else {
-                throw new IllegalArgumentException("Veuillez sÃ©lectionner un code avant de supprimer !");
+                throw new IllegalArgumentException("Veuillez sélectionner un code avant de supprimer !");
             }
         } catch (IllegalArgumentException iae) {
             MonJavaFX.erreur("Erreur", iae.getMessage());
@@ -67,7 +68,8 @@ public class CtrlVueCode {
                 this.convertisseur.ajouter(new Code(nouvelleSaisie.split(":")[0].trim().charAt(0), nouvelleSaisie.split(":")[1].trim()));
                 this.vue.afficherListeConversion(this.convertisseur.getLesCodes());
                 this.vue.afficherAction(false);
-                MonJavaFX.info("SuccÃ¨s", "Action rÃ©alisÃ©e.");
+                MonJavaFX.info("Succès", "Action réalisée.");
+                dao.FichiersPlats.sauve(this.convertisseur.getLesCodes());
             } else {
                 this.vue.afficherAction(true);
                 throw new IllegalArgumentException("Impossible d'effectuer cette action");
