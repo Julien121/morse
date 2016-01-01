@@ -13,9 +13,9 @@ public class CtrlVueCode {
     private VueCode vue;
     private Convertisseur convertisseur;
 
-     @FXML
+    @FXML
     private Label vue2_labAction;
-     
+
     public void setModele(Convertisseur convertisseur) {
         this.convertisseur = convertisseur;
         this.vue.afficherAction(false);
@@ -38,6 +38,12 @@ public class CtrlVueCode {
     public void handleActionModifierCode(ActionEvent event) {
         this.vue.afficherAction(true);
         this.vue2_labAction.setText("Modifier conversion");
+        String select = this.vue.listeSelection();
+        String nouvelleSaisie;
+        if (select != null) {
+            nouvelleSaisie = this.vue.selectionner(select);
+            System.out.println("Selectionner:" + select);
+        }
     }
 
     public void handleActionSupprimerCode(ActionEvent event) {
@@ -56,12 +62,7 @@ public class CtrlVueCode {
 
     public void handleActionValider(ActionEvent event) {
         try {
-            String select = this.vue.selectionner();
             String nouvelleSaisie = this.vue.saisieNouvelleConversion();
-            if (select != null) {
-                nouvelleSaisie = select;
-                System.out.println("Selectionner:" + select);
-            }
             if (!nouvelleSaisie.isEmpty()) {
                 this.convertisseur.ajouter(new Code(nouvelleSaisie.split(":")[0].trim().charAt(0), nouvelleSaisie.split(":")[1].trim()));
                 this.vue.afficherListeConversion(this.convertisseur.getLesCodes());

@@ -100,9 +100,14 @@ public class VueCode extends Stage {
         return conversion; 
     }
     
-    public String selectionner(){
+    public String listeSelection(){
         ListView<String> liste = (ListView<String>) this.root.lookup("#vue2_ListeConversion");
         String items = liste.getSelectionModel().getSelectedItem();
         return items;
+    }
+    
+    public void selectionner(String select){
+        TextField tSaisieConversion = (TextField) this.root.lookup("#vue2_tfSaisieModifConversion");
+        tSaisieConversion.setText(select);
     }
 }
