@@ -24,7 +24,11 @@ public class VueCode extends Stage {
     private CtrlVueCode controleur;
 
     private VBox root;
-
+    
+	/**
+	 * Initialise la fenêtre
+	 * @param parent Une instance de Stage
+	 */
     public VueCode(Stage parent) {
 
         try {
@@ -47,7 +51,11 @@ public class VueCode extends Stage {
         }
 
     }
-
+    
+    /**
+     * Retourne le controleur
+     * @return controleur Une instance de CtrlVueCode
+     */
     public CtrlVueCode getControleur() {
         return this.controleur;
     }

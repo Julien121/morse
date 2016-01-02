@@ -9,7 +9,6 @@ import perso.utils.MonJavaFX;
 import vue.VueCode;
 
 public class CtrlVueCode {
-
     private VueCode vue;
     private Convertisseur convertisseur;
 
@@ -21,21 +20,33 @@ public class CtrlVueCode {
         this.vue.afficherAction(false);
         this.vue.afficherListeConversion(this.convertisseur.getLesCodes());
     }
-
+    /**
+     * Met à jour la vueCode
+     * @param vueCode Le nouvelle vueCode
+     */
     public void setVue(VueCode vueCode) {
         this.vue = vueCode;
     }
-
+    /**
+     * Ferme la fenêtre lorsqu'on clique sur le bouton fermer
+     * @param event Une instance de ActionEvent
+     */
     public void handleActionFermerFenetre(ActionEvent event) {
         this.vue.close();
     }
-
+    /**
+     * Affiche le formulaire lorsqu'on clique sur le bouton ajouter
+     * @param event Une instance de ActionEvent
+     */
     public void handleActionAjouterCode(ActionEvent event) {
         this.vue.afficherAction(true);
         this.vue2_labAction.setText("Ajouter conversion");
         this.vue.selectionner("");
     }
-
+    /**
+     * Affiche le formulaire avec le code sélectionner lorsqu'on clique sur le bouton Modifier
+     * @param event Une instance de ActionEvent
+     */
     public void handleActionModifierCode(ActionEvent event) {
         this.vue.afficherAction(true);
         this.vue2_labAction.setText("Modifier conversion");
@@ -44,7 +55,10 @@ public class CtrlVueCode {
             this.vue.selectionner(select);
         }
     }
-
+    /**
+     * Supprime le code sélectionner lorsqu'on clique sur le bouton supprimer
+     * @param event Une instance de ActionEvent
+     */
     public void handleActionSupprimerCode(ActionEvent event) {
         try {
             String select = this.vue.listeSelection();
@@ -60,7 +74,10 @@ public class CtrlVueCode {
             MonJavaFX.erreur("Erreur", iae.getMessage());
         }
     }
-
+    /**
+     * Traite l'input lors que l'on  clique sur le bouton valider
+     * @param event Une instance de ActionEvent
+     */
     public void handleActionValider(ActionEvent event) {
         try {
             String nouvelleSaisie = this.vue.saisieNouvelleConversion();

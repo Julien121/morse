@@ -16,7 +16,11 @@ public class VueMorse extends Scene {
     private Stage primaryStage;
     private VBox rootLayout;
     private CtrlVueMorse controleur;
-
+    
+	/**
+	 * Initialise la fenêtre
+	 * @param parent Une instance de Stage
+	 */
     public VueMorse(Stage stage) {
 
         super(new Group(), 400, 600);
@@ -70,13 +74,19 @@ public class VueMorse extends Scene {
         this.primaryStage.show();
 
     }
-
+    /**
+     * Crée une nouvelle vue
+     * @return Une instance de VueCode
+     */
     public VueCode creeVueSecondaire() {
 
         return new VueCode(this.primaryStage);
 
     }
-
+    /**
+     * Retourne le controleur
+     * @return controleur Une instance de CtrlVueMorse
+     */
     public CtrlVueMorse getControleur() {
         return this.controleur;
     }

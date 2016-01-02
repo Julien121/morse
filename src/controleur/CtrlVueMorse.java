@@ -15,15 +15,23 @@ public class CtrlVueMorse {
 
     @FXML
     private TextArea tATexteSaisie;
-
+    
     public void setModele(Convertisseur convertisseur) {
         this.convertisseur = convertisseur;
     }
-
+    
+    /**
+     * Met à jour la vueMorse
+     * @param vueCode Le nouvelle vueMorse
+     */
     public void setVue(VueMorse vueMorse) {
         this.vue = vueMorse;
     }
-
+    
+    /**
+     * Trait l'input quand l'on clique sur le bouton convertir
+     * @param vueCode Une instance de ActionEvent
+     */
     public void handleActionConvert(ActionEvent event) {
         try {
             if (tATexteSaisie.getText().isEmpty()) {
@@ -36,7 +44,10 @@ public class CtrlVueMorse {
             MonJavaFX.erreur("Erreur", iae.getMessage());
         }
     }
-
+    /**
+     * Affiche la fenêtre des codes lorsque l'on clique sur le bouton convertir
+     * @param vueCode Une instance de ActionEvent
+     */
     public void handleActionAffVueCode(ActionEvent event) {
         VueCode c = this.vue.creeVueSecondaire();
         c.getControleur().setModele(this.convertisseur);

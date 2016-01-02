@@ -37,7 +37,7 @@ public class Convertisseur {
     /**
      * Décode la chaine de caractère
      * @param code La chaine de caractère à décoder
-     * @return La chaine décodé
+     * @return La chaine de caractère décodé
      */
     public String decode(String code) {
         String newStr = "";
@@ -46,7 +46,7 @@ public class Convertisseur {
         boolean trouve = false;
         for (int i = 0; i < tbCode.length; i++) {
             j = 0;
-            if (!tbCode[i].isEmpty() || !tbCode[i+1].isEmpty()) {
+            if (!tbCode[i].isEmpty() || !tbCode[i+1].isEmpty()) { 
                 while (j < lesCodes.size() && trouve == false) {
                     if (tbCode[i].equals(lesCodes.get(j).getCodeLettre())) {
                         newStr += lesCodes.get(j).getLettre();
@@ -67,7 +67,11 @@ public class Convertisseur {
         }
         return newStr;
     }
-
+    /**	
+     * Encode la chaine de caractère
+     * @param str La chaine de caractère à encoder
+     * @return La chaine de caractère encodé
+     */
     public String encode(String str) {
         String newStr = "";
         int j;
@@ -94,7 +98,10 @@ public class Convertisseur {
         }
         return newStr;
     }
-    
+    /**
+     * Ajoute ou modifie le code dans la liste des codes
+     * @param c La devise à ajouter ou modifier
+     */
     public void ajouter(Code c)
     {
     	int i = 0;
@@ -121,7 +128,10 @@ public class Convertisseur {
     		lesCodes.add(c);
     	}
     }
-
+    /**
+     * Supprime un code dans la liste des codes
+     * @param c le code à supprimer
+     */
 	public void supprimer(Code c)
     {
     	if(lesCodes.contains(c))

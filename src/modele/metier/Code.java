@@ -53,18 +53,18 @@ public class Code {
     * @param codeLettre  Le nouveau codeLettre
     */
 	public void setCodeLettre(String codeLettre) {
-		if(!codeLettre.isEmpty())// Si le paramètre et pas vide on fait le traitement sinon on crée une exception
+		if(!codeLettre.isEmpty())
 		{
 			int i = 0;
 			boolean valide = true;
-			while(i < codeLettre.length() && valide == true){// On parcourt chaque caractère de la chaine de caractères
-				if(codeLettre.charAt(i) != ' ' && codeLettre.charAt(i) != '-' && codeLettre.charAt(i) != '.'){//s'il possède autre chose qu'un .,- ou un espace on arrête la boucle
+			while(i < codeLettre.length() && valide == true){
+				if(codeLettre.charAt(i) != ' ' && codeLettre.charAt(i) != '-' && codeLettre.charAt(i) != '.'){
 					System.out.println(codeLettre.charAt(i));
 					valide = false;
 				}
 				i++;
 			}
-			if(valide)//si le code est bon on le place dans codeLettre sinon on crée une exception
+			if(valide)
 			{
 				this.codeLettre = codeLettre;
 			}
