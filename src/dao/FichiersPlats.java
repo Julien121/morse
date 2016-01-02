@@ -12,9 +12,11 @@ import modele.metier.Code;
 import modele.metier.Convertisseur;
 
 public class FichiersPlats {
-
     private static final File f = new File("CodeMorse.txt");
- 
+    /**
+     * Lit et crée une instance de Convertisseur avec les codes morse du fichier
+     * @return Une instance de Convertisseur
+     */
     public static Convertisseur lecture() {
     	Convertisseur m = new Convertisseur();
         String[] newStr;
@@ -42,7 +44,10 @@ public class FichiersPlats {
         }
         return m;
     }
-
+    /**
+     * Enregistre le code morse dans le fichier
+     * @param listeCode La liste des codes
+     */
     public static void sauve(ArrayList<Code> listeCode) {
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter(f));
