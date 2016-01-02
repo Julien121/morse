@@ -13,6 +13,7 @@ import modele.metier.Convertisseur;
 
 public class FichiersPlats {
     private static final File f = new File("CodeMorse.txt");
+    
     /**
      * Lit et crée une instance de Convertisseur avec les codes morse du fichier
      * @return Une instance de Convertisseur
