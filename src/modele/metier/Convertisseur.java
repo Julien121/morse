@@ -4,27 +4,41 @@ import java.util.ArrayList;
 import modele.metier.Code;
 
 public class Convertisseur {
-
+	/**
+	 * La liste des codes
+	 */
     private ArrayList<Code> lesCodes;
 
+    /**
+     * Constructeur
+     */
     public Convertisseur() {
         lesCodes = new ArrayList<Code>();
     }
-    
+    /**
+     * Retourne la liste des codes
+     * @return lesCodes la liste des codes
+     */
     public ArrayList<Code> getLesCodes() {
 		return lesCodes;
 	}
-    
+    /**
+     * Vérifie la chaine de caractère et envoie à la bonne fonction la chaine
+     * @param str La chaine à convertir
+     * @return La chaine convertie
+     */
     public String verifer(String str) {
-        if (str.matches("[\\w\\s]+")) {
-            System.out.println(str);
+        if (str.matches("[\\w\\s]+")) {//Si la chaine posséde que lettre ou des chiffre et des espace alors on encode sinon on decode
             return encode(str);
         } else {
-            System.out.println(str);
             return decode(str);
         }
     }
-
+    /**
+     * Décode la chaine de caractère
+     * @param code La chaine de caractère à décoder
+     * @return La chaine décodé
+     */
     public String decode(String code) {
         String newStr = "";
         String[] tbCode = code.split("\\s");
