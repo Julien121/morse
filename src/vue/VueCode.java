@@ -52,10 +52,6 @@ public class VueCode extends Stage {
         return this.controleur;
     }
 
-    public ListView<String> getListView() {
-        return (ListView<String>) this.root.lookup("#vue2_ListeConversion");
-    }
-
     public void afficherListeConversion(ArrayList<Code> lesCodes) {
         FlowPane fP = (FlowPane) this.root.lookup("#FPListView");
         fP.getChildren().clear();
@@ -70,20 +66,6 @@ public class VueCode extends Stage {
         liste.setId("vue2_ListeConversion");
         fP.getChildren().add(liste);
     }
-
-    //public String saisieNouvelleConversion() {
-
-        //String conversion = null;
-        //TextInputDialog inDialog = new TextInputDialog();
-        //inDialog.setTitle("Saisie d'une nouvelle conversion");
-        //inDialog.setHeaderText("Nouvelle conversion");
-        //inDialog.setContentText("La conversion");
-        //Optional<String> textIn = inDialog.showAndWait();
-        //if (textIn.isPresent()) {
-        //    conversion = textIn.get();
-        //}
-        //return conversion;
-    //}
     
     public void afficherAction(boolean visible){
         TextField tSaisieConversion = (TextField) this.root.lookup("#vue2_tfSaisieModifConversion");
@@ -100,8 +82,8 @@ public class VueCode extends Stage {
         return conversion; 
     }
     
-    public String listeSelection(){
-        ListView<String> liste = (ListView<String>) this.root.lookup("#vue2_ListeConversion");
+	public String listeSelection(){
+		ListView<String> liste = (ListView<String>) this.root.lookup("#vue2_ListeConversion");
         String items = liste.getSelectionModel().getSelectedItem();
         return items;
     }

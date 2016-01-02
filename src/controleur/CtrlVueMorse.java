@@ -13,13 +13,9 @@ public class CtrlVueMorse {
     private VueMorse vue;
     private Convertisseur convertisseur;
 
-    //@FXML
-    //private BorderPane bPAffichageConversion;
     @FXML
     private TextArea tATexteSaisie;
 
-    //@FXML
-    //private TextArea tATexteConverti;
     public void setModele(Convertisseur convertisseur) {
         this.convertisseur = convertisseur;
     }
@@ -33,7 +29,6 @@ public class CtrlVueMorse {
             if (tATexteSaisie.getText().isEmpty()) {
                 throw new IllegalArgumentException("Conversion impossible. Vous n'avez rien saisie.");
             } else {
-                //bPAffichageConversion.setVisible(true);
                 String textConvertie = convertisseur.verifer(tATexteSaisie.getText().toLowerCase());
                 tATexteSaisie.setText(textConvertie);
             }

@@ -3,7 +3,6 @@ package vue;
 import java.io.IOException;
 
 import controleur.CtrlVueMorse;
-import java.util.ArrayList;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Group;

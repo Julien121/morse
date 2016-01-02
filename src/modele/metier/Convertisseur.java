@@ -2,7 +2,6 @@ package modele.metier;
 
 import java.util.ArrayList;
 import modele.metier.Code;
-import java.util.regex.*;
 
 public class Convertisseur {
 
