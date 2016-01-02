@@ -14,7 +14,7 @@ public class CtrlVueCode {
 
     @FXML
     private Label vue2_labAction;
-
+    
     public void setModele(Convertisseur convertisseur) {
         this.convertisseur = convertisseur;
         this.vue.afficherAction(false);
@@ -58,6 +58,7 @@ public class CtrlVueCode {
     /**
      * Supprime le code sélectionner lorsqu'on clique sur le bouton supprimer
      * @param event Une instance de ActionEvent
+     * @throws IllegalArgumentException Si aucun élément de la listView n'a été sélectionner
      */
     public void handleActionSupprimerCode(ActionEvent event) {
         try {
@@ -77,6 +78,7 @@ public class CtrlVueCode {
     /**
      * Traite l'input lors que l'on  clique sur le bouton valider
      * @param event Une instance de ActionEvent
+     * @throws IllegalArgumentException Si la saisie est vide
      */
     public void handleActionValider(ActionEvent event) {
         try {

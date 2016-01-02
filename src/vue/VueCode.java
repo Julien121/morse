@@ -59,7 +59,10 @@ public class VueCode extends Stage {
     public CtrlVueCode getControleur() {
         return this.controleur;
     }
-
+    /**
+     * Crée la listView et ajoute les codes dans la listView
+     * @param lesCodes La liste des codes
+     */
     public void afficherListeConversion(ArrayList<Code> lesCodes) {
         FlowPane fP = (FlowPane) this.root.lookup("#FPListView");
         fP.getChildren().clear();
@@ -74,14 +77,20 @@ public class VueCode extends Stage {
         liste.setId("vue2_ListeConversion");
         fP.getChildren().add(liste);
     }
-    
+    /**
+     * Affiche ou cache le formulaire
+     * @param visible Vrai il affiche le formulaire sinon il le cache
+     */
     public void afficherAction(boolean visible){
         TextField tSaisieConversion = (TextField) this.root.lookup("#vue2_tfSaisieModifConversion");
         tSaisieConversion.setVisible(visible);
         Button valider = (Button) this.root.lookup("#vue2_btnValider");
         valider.setVisible(visible);
     }
-    
+    /**
+     * Récupère la saisie
+     * @return La saisie
+     */
     public String saisieNouvelleConversion(){
         
         String conversion = null;
@@ -89,13 +98,19 @@ public class VueCode extends Stage {
         conversion = tSaisieConversion.getText();
         return conversion; 
     }
-    
+    /**
+     * Récupère la sélection de la listView
+     * @return La sélection
+     */
 	public String listeSelection(){
 		ListView<String> liste = (ListView<String>) this.root.lookup("#vue2_ListeConversion");
         String items = liste.getSelectionModel().getSelectedItem();
         return items;
     }
-    
+    /**
+     * Affiche le texte dans l'input
+     * @param select Le texte à afficher
+     */
     public void selectionner(String select){
         TextField tSaisieConversion = (TextField) this.root.lookup("#vue2_tfSaisieModifConversion");
         tSaisieConversion.setPromptText("Format (a:.-)");

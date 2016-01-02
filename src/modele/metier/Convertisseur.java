@@ -38,6 +38,7 @@ public class Convertisseur {
      * Décode la chaine de caractère
      * @param code La chaine de caractère à décoder
      * @return La chaine de caractère décodé
+     * @throws IllegalArgumentException Si le texte n'a pas pu etre converti
      */
     public String decode(String code) {
         String newStr = "";
@@ -71,6 +72,7 @@ public class Convertisseur {
      * Encode la chaine de caractère
      * @param str La chaine de caractère à encoder
      * @return La chaine de caractère encodé
+     * @throws IllegalArgumentException Si le texte n'a pas pu etre converti
      */
     public String encode(String str) {
         String newStr = "";
@@ -131,6 +133,7 @@ public class Convertisseur {
     /**
      * Supprime un code dans la liste des codes
      * @param c le code à supprimer
+     * @throws IllegalArgumentException Si le code n'a pas pu être supprimé
      */
 	public void supprimer(Code c)
     {

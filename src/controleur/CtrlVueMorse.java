@@ -31,6 +31,7 @@ public class CtrlVueMorse {
     /**
      * Trait l'input quand l'on clique sur le bouton convertir
      * @param vueCode Une instance de ActionEvent
+     * @throws IllegalArgumentException Si la saisie est vide
      */
     public void handleActionConvert(ActionEvent event) {
         try {

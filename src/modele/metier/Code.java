@@ -37,6 +37,7 @@ public class Code {
    /**
     * Met à jour la lettre
     * @param lettre Le nouveau lettre
+    * @throws IllegalArgumentException Si la lettre passait en paramètre est vide
     */
 	public void setLettre(char lettre) {
 		if(!Character.toString(lettre).isEmpty())
@@ -51,6 +52,7 @@ public class Code {
    /**
     * Met à jour le codeLettre
     * @param codeLettre  Le nouveau codeLettre
+    * @throws IllegalArgumentException Si le code passait en paramètre est vide ou qu'il est invalide
     */
 	public void setCodeLettre(String codeLettre) {
 		if(!codeLettre.isEmpty())
