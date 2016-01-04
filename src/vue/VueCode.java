@@ -103,6 +103,7 @@ public class VueCode extends Stage {
      * @return La sélection
      */
 	public String listeSelection(){
+		@SuppressWarnings("unchecked")
 		ListView<String> liste = (ListView<String>) this.root.lookup("#vue2_ListeConversion");
         String items = liste.getSelectionModel().getSelectedItem();
         return items;
